@@ -1,0 +1,20 @@
+
+import random
+
+zgadywanka = ''
+while zgadywanka not in ('orzeł', 'reszka'):
+    print('Zgadnij wynik rzutu monetą! Wpisz orzeł lub reszka:')
+    zgadywanka = input()
+
+rzut = random.randint(0, 1)  # 0 to reszka, 1 to orzeł
+rzut_str = 'orzeł' if rzut == 1 else 'reszka'
+
+if rzut_str == zgadywanka:
+    print('Zgadłeś!')
+else:
+    print('Nie zgadłeś! Zgadnij jeszcze raz!')
+    zgadywanka = input()
+    if rzut_str == zgadywanka:
+        print('Zgadłeś!')
+    else:
+        print('Nie zgadłeś. Naprawdę jesteś słaby w tę grę.')
